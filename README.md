@@ -11,6 +11,7 @@ This is a basic implementation of a checkout system for the farmer's market. Cur
 
 The full documentation for the project can be [viewed online](https://ericdunham.github.io/farmers-market/). It can also be generated with `make && make docs`. After generating the documentation successfully, a message will be shown like:
 > Build finished. The HTML pages are in \_build/html.
+
 By default, all documentation is generated in HTML and is available at `docs/_build/html/index.html` after generation.
 
 ## Testing
