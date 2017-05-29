@@ -1,4 +1,5 @@
-# stdlib imports
+# -*- coding: utf-8 -*-
+# stdlib froms
 from functools import reduce
 
 #: A mapping of product codes to their prices.
