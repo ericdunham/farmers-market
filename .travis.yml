@@ -5,12 +5,4 @@ python:
   - "3.6"
 install: "make"
 script: "make ci"
-cache: pip
-jobs:
-  include:
-    - stage: test
-      script: "make ci"
-    - stage: coverage
-      python: 3.6
-      script: "make coverage"
-
+after_success: "coveralls"
