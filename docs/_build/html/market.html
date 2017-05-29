@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>market package &mdash; Farmer&#39;s Market  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Farmer&#39;s Market  documentation" href="index.html"/>
+        <link rel="prev" title="Welcome to Farmer’s Market’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Farmer's Market
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">market package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#market-market-module">market.market module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-market">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Farmer's Market</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>market package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/market.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="market-package">
+<h1>market package<a class="headerlink" href="#market-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="market-market-module">
+<h2>market.market module<a class="headerlink" href="#market-market-module" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="market.market.PRODUCT_PRICES">
+<code class="descclassname">market.market.</code><code class="descname">PRODUCT_PRICES</code><a class="headerlink" href="#market.market.PRODUCT_PRICES" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mapping of product codes to their prices.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="market.market.DISCOUNT_AMOUNTS">
+<code class="descclassname">market.market.</code><code class="descname">DISCOUNT_AMOUNTS</code><a class="headerlink" href="#market.market.DISCOUNT_AMOUNTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mapping of discount codes and the amount that they reduce the register
+total by, as a function of <a class="reference internal" href="#market.market.PRODUCT_PRICES" title="market.market.PRODUCT_PRICES"><code class="xref py py-const docutils literal"><span class="pre">PRODUCT_PRICES</span></code></a>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="market.market.CURRENT_DISCOUNTS">
+<code class="descclassname">market.market.</code><code class="descname">CURRENT_DISCOUNTS</code><a class="headerlink" href="#market.market.CURRENT_DISCOUNTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of currently-applicable discounts of the form <cite>list(function)</cite>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CURRENT_DISCOUNTS</span> <span class="o">=</span> <span class="p">[</span><span class="n">bogo</span><span class="p">,</span> <span class="n">appl</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This would make it so the unlimited buy-one-get-one-free special on coffee
+and the purchase a bag of oatmeal and get 50% off a bag of apples discount
+are applied during <a class="reference internal" href="#market.market.register" title="market.market.register"><code class="xref py py-func docutils literal"><span class="pre">register()</span></code></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-market.market"></span><dl class="function">
+<dt id="market.market.apom">
+<code class="descclassname">market.market.</code><code class="descname">apom</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#apom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.apom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the APOM discount to the <cite>basket</cite>, if applicable.
+The APOM discount is defined as:</p>
+<blockquote>
+<div>Purchase a bag of Oatmeal and get 50% off a bag of Apples.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the APOM discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.DISCOUNT_AMOUNTS" title="market.market.DISCOUNT_AMOUNTS"><code class="xref py py-const docutils literal"><span class="pre">DISCOUNT_AMOUNTS</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.apply_discount" title="market.market.apply_discount"><code class="xref py py-func docutils literal"><span class="pre">apply_discount()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.apom_verbose">
+<code class="descclassname">market.market.</code><code class="descname">apom_verbose</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#apom_verbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.apom_verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the APOM discount to the <cite>basket</cite>, if applicable.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1: </span>Use <a class="reference internal" href="#market.market.apom" title="market.market.apom"><code class="xref py py-func docutils literal"><span class="pre">apom()</span></code></a> instead.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the APOM discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.appl">
+<code class="descclassname">market.market.</code><code class="descname">appl</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#appl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.appl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the APPL discount to the <cite>basket</cite>, if applicable.
+The APPL discount is defined as:</p>
+<blockquote>
+<div>If you buy 3 or more bags of Apples, the price drops to $4.50.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the APPL discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.DISCOUNT_AMOUNTS" title="market.market.DISCOUNT_AMOUNTS"><code class="xref py py-const docutils literal"><span class="pre">DISCOUNT_AMOUNTS</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.apply_discount" title="market.market.apply_discount"><code class="xref py py-func docutils literal"><span class="pre">apply_discount()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.appl_verbose">
+<code class="descclassname">market.market.</code><code class="descname">appl_verbose</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#appl_verbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.appl_verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the APPL discount to the <cite>basket</cite>, if applicable.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1: </span>Use <a class="reference internal" href="#market.market.appl" title="market.market.appl"><code class="xref py py-func docutils literal"><span class="pre">appl()</span></code></a> instead.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the APPL discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.apply_discount">
+<code class="descclassname">market.market.</code><code class="descname">apply_discount</code><span class="sig-paren">(</span><em>trigger</em>, <em>triggers_needed</em>, <em>affected</em>, <em>discount</em>, <em>when</em>, <em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#apply_discount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.apply_discount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given <cite>discount</cite> to the <cite>basket</cite>, if all preconditions are met,
+returning the new basket with discounts present.</p>
+<p>This is the function that all discounts are expected to call, hence the
+deprecation of the <code class="docutils literal"><span class="pre">*_verbose</span></code> functions.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">PRODUCT_PRICES</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;FOO&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">DISCOUNT_AMOUNTS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;BAZ&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">3.50</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">quux</span><span class="p">(</span><span class="n">basket</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">market</span><span class="o">.</span><span class="n">apply_discount</span><span class="p">(</span><span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="s1">&#39;BAZ&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="n">basket</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">setattr</span><span class="p">(</span><span class="n">market</span><span class="p">,</span> <span class="s1">&#39;quux&#39;</span><span class="p">,</span> <span class="n">quux</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">CURRENT_DISCOUNTS</span> <span class="o">=</span> <span class="p">[</span><span class="n">quux</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">register</span><span class="p">([</span><span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">])</span>
+<span class="go">[(&#39;FOO&#39;, 4), (&#39;FOO&#39;, 4), (&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5), (&#39;BAR&#39;, 2),</span>
+<span class="go"> (&#39;BAZ&#39;, -3.5)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">register</span><span class="p">([</span><span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">])</span>
+<span class="go">[(&#39;FOO&#39;, 4), (&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">register</span><span class="p">([</span><span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">])</span>
+<span class="go">[(&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5), (&#39;FOO&#39;, 4), (&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5)]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>trigger</strong> (<em>str</em>) – The product code that potentially triggers a discount.</li>
+<li><strong>triggers_needed</strong> (<em>int</em>) – The minimum number of <cite>triggers</cite> that must be
+seen in <cite>basket</cite> to potentially apply a discount.</li>
+<li><strong>affected</strong> (<em>str</em>) – The product code that is affected by the trigger,
+which determines the insertion position of <cite>discount</cite>.</li>
+<li><strong>discount</strong> (<em>str</em>) – The product code representing the discount.</li>
+<li><strong>when</strong> (<em>function</em>) – <p>The function to call to ultimately determine whether
+or not to apply the discount. This function receives two arguments, in
+the following order:</p>
+<ul>
+<li><strong>seen_count</strong>: an <cite>int</cite> representing the number of times that
+<cite>affected</cite> has been seen</li>
+<li><strong>affected_count</strong>: an <cite>int</cite> representing the number of times that
+the discount has already been applied in the currently executing
+context of <a class="reference internal" href="#market.market.apply_discount" title="market.market.apply_discount"><code class="xref py py-func docutils literal"><span class="pre">apply_discount()</span></code></a></li>
+</ul>
+</li>
+<li><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply <cite>discount</cite> to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The <cite>basket</cite> with the applicable discount applied.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list(str)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.bogo">
+<code class="descclassname">market.market.</code><code class="descname">bogo</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#bogo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.bogo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the BOGO discount to the <cite>basket</cite>, if applicable.
+The BOGO discount is defined as:</p>
+<blockquote>
+<div>Buy-One-Get-One-Free Special on Coffee. (Unlimited)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the BOGO discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.DISCOUNT_AMOUNTS" title="market.market.DISCOUNT_AMOUNTS"><code class="xref py py-const docutils literal"><span class="pre">DISCOUNT_AMOUNTS</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.apply_discount" title="market.market.apply_discount"><code class="xref py py-func docutils literal"><span class="pre">apply_discount()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.bogo_verbose">
+<code class="descclassname">market.market.</code><code class="descname">bogo_verbose</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#bogo_verbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.bogo_verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the BOGO discount to the <cite>basket</cite>, if applicable.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1: </span>Use <a class="reference internal" href="#market.market.bogo" title="market.market.bogo"><code class="xref py py-func docutils literal"><span class="pre">bogo()</span></code></a> instead.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the BOGO discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.chmk">
+<code class="descclassname">market.market.</code><code class="descname">chmk</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#chmk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.chmk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the CHMK discount to the <cite>basket</cite>, if applicable.
+The CHMK discount is defined as:</p>
+<blockquote>
+<div>Purchase a box of Chai and get milk free. (Limit 1)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the CHMK discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.DISCOUNT_AMOUNTS" title="market.market.DISCOUNT_AMOUNTS"><code class="xref py py-const docutils literal"><span class="pre">DISCOUNT_AMOUNTS</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.apply_discount" title="market.market.apply_discount"><code class="xref py py-func docutils literal"><span class="pre">apply_discount()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.chmk_verbose">
+<code class="descclassname">market.market.</code><code class="descname">chmk_verbose</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#chmk_verbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.chmk_verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the CHMK discount to the <cite>basket</cite>, if applicable.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1: </span>Use <a class="reference internal" href="#market.market.chmk" title="market.market.chmk"><code class="xref py py-func docutils literal"><span class="pre">chmk()</span></code></a> instead.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to apply the CHMK discount to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with the applicable discount applied.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.register">
+<code class="descclassname">market.market.</code><code class="descname">register</code><span class="sig-paren">(</span><em>basket</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a register for the given <cite>basket</cite>, which is a representation of
+codes and their associated values.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">register</span><span class="p">([</span><span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="s1">&#39;BAR&#39;</span><span class="p">])</span>
+<span class="go">[(&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5), (&#39;FOO&#39;, 4), (&#39;BAR&#39;, 2), (&#39;BAZ&#39;, -3.5)]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>basket</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The basket to create a register from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The <cite>basket</cite> with all amounts associated to their codes.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(tuple(str, float))</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="market.market.total">
+<code class="descclassname">market.market.</code><code class="descname">total</code><span class="sig-paren">(</span><em>register_lines</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/market/market.html#total"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#market.market.total" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total for the given <cite>register_lines</cite>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">market</span><span class="o">.</span><span class="n">total</span><span class="p">([(</span><span class="s1">&#39;FOO&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;BAR&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;BAZ&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.5</span><span class="p">)])</span> <span class="o">==</span> <span class="mf">2.50</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>register_lines</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>str</em><em>, </em><em>float</em><em>)</em><em>)</em>) – The register lines.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The total of all amounts in <cite>register_lines</cite>, rounded to two
+significant digits.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><a class="reference internal" href="#market.market.register" title="market.market.register"><code class="xref py py-func docutils literal"><span class="pre">register()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-market">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-market" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Farmer’s Market’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Eric Dunham.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
