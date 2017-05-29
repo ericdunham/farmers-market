@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+# stdlib imports
 import unittest
-
+# project froms
 from market import market
 
 
